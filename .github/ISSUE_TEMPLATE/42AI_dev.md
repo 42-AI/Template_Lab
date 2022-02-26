@@ -2,7 +2,7 @@
 name: 🤖 Developper 
 about: As a developper of this project you create an issue before coding 💻
 title: 'type (scope): description'
-labels: dev
+labels: fixme
 assignees: ''
 ---
 
@@ -27,7 +27,7 @@ Your time is valuable, before starting to code something which could take you ho
 Is there something less time consuming which could help you attain a similar result ?
 
 
-# Describe a test that your feature should pass
+# Describe a test that your feature should pass before merging to master
 
 Before coding you have to describe a new test that your code should pass before being merged to `master`.
 

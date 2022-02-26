@@ -1,12 +1,3 @@
----
-name: Pull Request 
-about: Create a pull request to fix something or to add a feature
-title: ''
-labels: ''
-assignees: ''
----
-
-
 # Prerequisites
 
 Please answer the following questions for yourself before submitting an issue. **YOU MAY DELETE THE PREREQUISITES SECTION.**
