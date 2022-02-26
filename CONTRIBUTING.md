@@ -21,7 +21,7 @@ When you create an issue, make sure it :
 - **fix**: Fix a bug
 - **perf**: Changes that only improve performance
 - **refactor**: A code change that do not add features or fix a bug 
-- **style**: Changes that does not affect the code (whit-space, formatting, etc...)
+- **style**: Changes that does not affect the code (white-space, formatting, etc...)
 - **test**: Creating a test
 
 ---
@@ -29,11 +29,30 @@ When you create an issue, make sure it :
 Your commit messages must follow [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/)
 with the same **`<type>`** than in the issues naming convention above 
 
----
-## BRANCH
-Your branch name should always refer to the issue it aims to fix.
+if your commit solves an issue, you have to reference it with #ISSUE_NB
 
-Always base your branch on the master branch.
+---
+## BRANCHES
+
+There is 3 types of branches:
+ - `from-issue`
+   - The branch name is created from the issue name
+   - These branches are created from `master`
+   - It's were we code
+   - Once the issue complete they are merged to `master` after a successfull pull request
+ - `master`
+   - It's were are aggregated the new features
+   - It's the only branch from which we can create a pull request to `production`
+ - `production`
+   - This branch should always be working and ready to use
+   - It only accepts pull request from `master`
+
+Your branch name should always refer to the issue it aims to fix.
+Always create your branch from the master branch.
+You work on your branch.
+The CICD needs to be succesful before creating a pull request
+Your pull request has to be reviewed and approved before merging to master
+
 
 ---
 ## MERGE REQUEST
