@@ -1,3 +1,20 @@
+---
+name: Pull Request 
+about: Create a pull request to fix something or to add a feature
+title: ''
+labels: ''
+assignees: ''
+---
+
+
+# Prerequisites
+
+Please answer the following questions for yourself before submitting an issue. **YOU MAY DELETE THE PREREQUISITES SECTION.**
+
+- [ ] I did version my data with DVC
+- [ ] If I installed new pip package, I added them to the requirements.txt
+- [ ] I completed the Readme.md by adding my latest feature to it
+
 # Description
 
 Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
@@ -21,10 +38,10 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] Test B
 
 **Test Configuration**:
+* Data used:
 * Firmware version:
 * Hardware:
-* Toolchain:
-* SDK:
+* Operating System:
 
 # Checklist:
 
