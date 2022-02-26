@@ -3,7 +3,7 @@ name: Hello World
 on: [push]
 
 jobs:
-  make-it:
+  hello-world:
     runs-on: ubuntu-latest
     steps:
       - name: valid test
