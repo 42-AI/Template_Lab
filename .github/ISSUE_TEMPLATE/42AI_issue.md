@@ -2,7 +2,7 @@
 name: 🐞 Bug report
 about: If you have found a problem 🕵️
 title: 'fix (subject): description'
-labels: fixme
+labels: bug
 assignees: ''
 ---
 

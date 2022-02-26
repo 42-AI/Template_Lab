@@ -2,7 +2,7 @@
 name: 🚀 User Feature request
 about: If you have a feature request 💡
 title: 'feat (subject): description'
-labels: feature
+labels: enhancement
 assignees: ''
 ---
 

@@ -1,0 +1,13 @@
+name: Hello World
+
+on: [push]
+
+jobs:
+  make-it:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:latest
+    steps:
+      - name: version
+        run: echo Hello World
+        
