@@ -44,9 +44,8 @@ This is important in case the issue is not reproducible except for under certain
 
 * Data used:
 * Firmware Version:
+* Hardware:
 * Operating System:
-* SDK version:
-* Toolchain version:
 
 ## Failure Logs
 
