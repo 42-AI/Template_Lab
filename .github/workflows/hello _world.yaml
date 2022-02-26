@@ -5,9 +5,8 @@ on: [push]
 jobs:
   make-it:
     runs-on: ubuntu-latest
-    container:
-      image: ubuntu:latest
     steps:
-      - name: version
+      - name: valid test
         run: echo Hello World
-        
+      - name: invalid test
+        run: gsadfds
