@@ -1,7 +1,7 @@
 ---
-name: Bug Issue Template 
-about: Create a report to help us improve
-title: ''
+name: 🐞 Bug report
+about: If you have found a problem 🕵️
+title: 'fix (subject): description'
 labels: fixme
 assignees: ''
 ---
