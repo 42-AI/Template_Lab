@@ -8,5 +8,5 @@ jobs:
     steps:
       - name: valid test
         run: echo Hello World
-      - name: invalid test
-        run: gsadfds
+      # - name: invalid test
+      #   run: gsadfds
