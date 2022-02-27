@@ -93,3 +93,5 @@ venv
 *.egg-info
 
 .pytest_cache
+.env
+.envrc
