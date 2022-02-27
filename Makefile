@@ -34,9 +34,13 @@ clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
 
-## Lint using flake8
+## Lint using autopep8
 lint:
-	flake8 src
+	autopep8 -r --diff src
+
+## Lint using autopep8
+format:
+	autopep8 -r --in-place src
 
 ## Upload Data to S3
 sync_data_to_s3:
