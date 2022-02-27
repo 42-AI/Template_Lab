@@ -24,3 +24,6 @@ pip install -r requirements.txt
 
 # echo $RED "INIT: " $END "Downloading hello world dataset..."
 # sh scripts/download_dataset.sh
+
+echo $RED "INIT: " $END "Adding .envrc ..."
+echo "source venv/bin/activate" > .envrc
