@@ -32,7 +32,7 @@ For this step there is a web pluggin which makes everything easier:
 
 ## 6. Work on it
 
-needs to have successful github actions
+You can code !
 
 ## 7. Create a Pull Request
 
@@ -47,9 +47,13 @@ needs to have successful github actions
 
 ![Step 9](.42AI/assets/Step_9.png)
 
-## 10. Close the issue
+## 10. Delete the old branch
 
 ![Step 10](.42AI/assets/Step_10.png)
+
+## 11. Close the issue
+
+![Step 11](.42AI/assets/Step_11.png)
 
 
 ---
