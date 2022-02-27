@@ -9,15 +9,40 @@ To keep the code clean 🧹 and organized 🗒️, we'd like you to follow some 
 
 ## 1. Create an isssue
 
-## 2. Create a branch from the issue
+![Step 1](.42AI/assets/Step_1.png)
 
-## 3. Work on it
+## 2. Select the developper issue
+
+![Step 2](.42AI/assets/Step_2.png)
+
+## 3. Fill your issue description
+![Step 3](.42AI/assets/Step_3.png)
+
+## 4. Create a branch from the issue
+
+For this step there is a web pluggin which makes everything easier:
+[https://github.com/bumbeishvili/create-branch-from-issue](https://github.com/bumbeishvili/create-branch-from-issue)
+
+![Step 4](.42AI/assets/Step_4.png)
+
+## 5. Change your branch and start coding
+![Step 5](.42AI/assets/Step_5.png)
+![Step 6](.42AI/assets/Step_6.png)
+
+
+## 6. Work on it
 
 needs to have successful github actions
 
-## 4. Create a Pull Request
+## 7. Create a Pull Request
 
-## 5. Assign others to it
+
+
+## 8. Assign others to it
+
+## 9. Review the merge request
+
+## 10. Close the issue
 
 
 ---
