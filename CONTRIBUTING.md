@@ -36,13 +36,20 @@ needs to have successful github actions
 
 ## 7. Create a Pull Request
 
+![Step 7](.42AI/assets/Step_7.png)
 
 
 ## 8. Assign others to it
 
-## 9. Review the merge request
+![Step 8](.42AI/assets/Step_8.png)
+
+## 9. Review and validate the merge request
+
+![Step 9](.42AI/assets/Step_9.png)
 
 ## 10. Close the issue
+
+![Step 10](.42AI/assets/Step_10.png)
 
 
 ---
