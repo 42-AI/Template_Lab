@@ -4,6 +4,7 @@ RED="\e[1;31m"
 END="\e[0m"
 
 echo $RED "INIT: " $END "Copy of hook commit..."
+mkdir -p .git/hooks/
 cp .42AI/pre-commit.git .git/hooks/pre-commit
 
 
