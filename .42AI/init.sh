@@ -22,5 +22,5 @@ pip install --upgrade pip
 echo $RED "INIT: " $END "Installing python dependancies..."
 pip install -r requirements.txt
 
-echo $RED "INIT: " $END "Downloading hello world dataset..."
-sh scripts/download_dataset.sh
+# echo $RED "INIT: " $END "Downloading hello world dataset..."
+# sh scripts/download_dataset.sh

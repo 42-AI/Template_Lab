@@ -18,29 +18,28 @@ parser_add = subparsers.add_parser('data', help='Data related commands')
 parser_add.add_argument('--download',
                         default='lorem',
                         choices=['lorem'],
-						help="Download the dataset",
-)
+                        help="Download the dataset",
+                        )
 
 parser_features = subparsers.add_parser(
-	'features', help='Features related commands')
+    'features', help='Features related commands')
 
 parser_models = subparsers.add_parser(
-	'models', help='Models related commands')
+    'models', help='Models related commands')
 
 parser_features = subparsers.add_parser(
-	'visualization', help='Visualization related commands')
-
+    'visualization', help='Visualization related commands')
 
 
 # Parsing args
 args = parser.parse_args()
 
 if args.subparser == "data":
-	if args.download == 'lorem':
-		data_main()
+    if args.download == 'lorem':
+        data_main()
 elif args.subparser == "features":
-	features_main()
+    features_main()
 elif args.subparser == "models":
-	models_main()
+    models_main()
 elif args.subparser == "visualization":
-	visualization_main()
+    visualization_main()

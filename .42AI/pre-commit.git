@@ -4,8 +4,7 @@ VIRTUALENV_PATH="./venv"
 . $VIRTUALENV_PATH/bin/activate
 
 # Linting
-autopep8 -r --diff src
-if [ $? != 0 ]
+if [[ $(autopep8 -r --diff src) ]]
 then
     echo "Error in file linting, can't commit files" 1>&2
 	echo 'Please run `make format`'
