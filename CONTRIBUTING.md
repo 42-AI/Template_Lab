@@ -5,6 +5,22 @@ Thank you for contributing to this project 🙏
 To keep the code clean 🧹 and organized 🗒️, we'd like you to follow some simple rules 📏 (or your work will not be taken in consideration 😱):
 
 ---
+# How to contribute
+
+## 1. Create an isssue
+
+## 2. Create a branch from the issue
+
+## 3. Work on it
+
+needs to have successful github actions
+
+## 4. Create a Pull Request
+
+## 5. Assign others to it
+
+
+---
 ## ISSUES
 When you create an issue, make sure it :
 - Says where the issue is, or come from

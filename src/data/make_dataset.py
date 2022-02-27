@@ -1,30 +1,42 @@
-# -*- coding: utf-8 -*-
-import click
-import logging
-from pathlib import Path
-from dotenv import find_dotenv, load_dotenv
+import csv
+import pandas as pd
+
+import os
 
 
-@click.command()
-@click.argument('input_filepath', type=click.Path(exists=True))
-@click.argument('output_filepath', type=click.Path())
-def main(input_filepath, output_filepath):
-    """ Runs data processing scripts to turn raw data from (../raw) into
-        cleaned data ready to be analyzed (saved in ../processed).
+def make_set(dir_in: str, set_type: str):
+    """Convert raw summary.json data to processed pick_and_bans data
+
+    Arguments:
+        path_in [str]: path to summary.json in raw data
+
+    Returns:
+        pandas.Dataframe
     """
-    logger = logging.getLogger(__name__)
-    logger.info('making final data set from raw data')
+    pre_df = {
+        "text": [],
+        "sentiment": [],
+    }
+    for root, dirs, files in os.walk(f"{dir_in}/pos", topdown=False):
+        for name in files:
+            path_in = os.path.join(root, name)
+            with open(path_in, 'r') as f:
+                pre_df['text'].append(f.read())
+                pre_df['sentiment'].append(1)
+
+    for root, dirs, files in os.walk(f"{dir_in}/neg", topdown=False):
+        for name in files:
+            path_in = os.path.join(root, name)
+            with open(path_in, 'r') as f:
+                pre_df['text'].append(f.read())
+                pre_df['sentiment'].append(0)
+
+    df = pd.DataFrame.from_dict(pre_df)
+    csv_path = f"data/processed/aclImdb/aclImdb_{set_type}.csv"
+    os.makedirs(os.path.dirname(csv_path), exist_ok=True)
+    df.to_csv(csv_path)
 
 
-if __name__ == '__main__':
-    log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    logging.basicConfig(level=logging.INFO, format=log_fmt)
-
-    # not used in this stub but often useful for finding various files
-    project_dir = Path(__file__).resolve().parents[2]
-
-    # find .env automagically by walking up directories until it's found, then
-    # load up the .env entries as environment variables
-    load_dotenv(find_dotenv())
-
-    main()
+def make_dataset_aclImdb():
+    make_set("data/raw/StandfordSentiments/aclImdb/train", "train")
+    make_set("data/raw/StandfordSentiments/aclImdb/test", "test")
