@@ -4,6 +4,29 @@ Thank you for contributing to this project 🙏
 
 To keep the code clean 🧹 and organized 🗒️, we'd like you to follow some simple rules 📏 (or your work will not be taken in consideration 😱):
 
+- [Hello World 👋](#hello-world-)
+- [How to contribute](#how-to-contribute)
+	- [1. Create an isssue](#1-create-an-isssue)
+	- [2. Select the developper issue](#2-select-the-developper-issue)
+	- [3. Fill your issue description](#3-fill-your-issue-description)
+	- [4. Create a branch from the issue](#4-create-a-branch-from-the-issue)
+	- [5. Change your branch and start coding](#5-change-your-branch-and-start-coding)
+	- [6. Work on it](#6-work-on-it)
+	- [7. Create a Pull Request](#7-create-a-pull-request)
+	- [8. Assign others to it](#8-assign-others-to-it)
+	- [9. Review and validate the merge request](#9-review-and-validate-the-merge-request)
+	- [10. Delete the old branch](#10-delete-the-old-branch)
+	- [11. Close the issue](#11-close-the-issue)
+	- [# Details](#-details)
+	- [ISSUES](#issues)
+		- [Furthermore please follow this convention for naming your issues:](#furthermore-please-follow-this-convention-for-naming-your-issues)
+	- [COMMITS](#commits)
+	- [BRANCHES](#branches)
+	- [PULL REQUEST](#pull-request)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 ---
 # How to contribute
 
@@ -57,6 +80,8 @@ You can code !
 
 
 ---
+# Details
+---
 ## ISSUES
 When you create an issue, make sure it :
 - Says where the issue is, or come from
@@ -90,7 +115,7 @@ There is 3 types of branches:
  - `from-issue`
    - The branch name is created from the issue name
    - These branches are created from `master`
-   - It's were we code
+   - It's where we code
    - Once the issue complete they are merged to `master` after a successfull pull request
  - `master`
    - It's were are aggregated the new features
@@ -107,9 +132,9 @@ Your pull request has to be reviewed and approved before merging to master
 
 
 ---
-## MERGE REQUEST
-Your merge request should explains clearly what it does.
+## PULL REQUEST
+Your pull request should explains clearly what it does.
 
 It should also briefly explain what it changes in the code.
 
-The name of the merge request must follow the same rule as the commit convention (because merge will be turned into commit in master)
+The name of the pull request must follow the same rule as the commit convention (because merge will be turned into commit in master)
