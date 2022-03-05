@@ -5,6 +5,7 @@
 awscli
 autopep8
 pytest
+dvc
 
 # project dependencies
 numpy
