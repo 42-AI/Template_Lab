@@ -23,6 +23,12 @@ docker build -t inference:latest .
 docker run -p 8000:8000 --name inference_container inference:latest
 ```
 
+# With Docker Compose
+
+```
+docker-compose up
+```
+
 # Project architecture
 
 Template for all the future project of the Laboratory of 42-AI

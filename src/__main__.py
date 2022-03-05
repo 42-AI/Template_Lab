@@ -4,6 +4,19 @@ from src.features.main import features_main
 from src.models.main import models_main
 from src.visualization.main import visualization_main
 
+from omegaconf import OmegaConf
+import hydra
+
+
+@hydra.main(config_path="./configs", config_name="config")
+def accessing_hydra_config(cfg):
+    # Print the config file using `to_yaml` method which prints in a pretty manner
+    print(OmegaConf.to_yaml(cfg))
+    print(f"{cfg.training.max_epochs = }")
+
+
+accessing_hydra_config()
+
 
 # create the top-level parser
 parser = argparse.ArgumentParser()

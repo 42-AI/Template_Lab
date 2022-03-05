@@ -7,9 +7,13 @@ autopep8
 pytest
 
 # project dependencies
+numpy
 pandas
+hydra
+hydra-core
+hydra_colorlog
+omegaconf
 
 #inference
-
 fastapi
 uvicorn
