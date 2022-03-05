@@ -95,3 +95,5 @@ venv
 .pytest_cache
 .env
 .envrc
+
+outputs

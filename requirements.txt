@@ -5,6 +5,16 @@
 awscli
 autopep8
 pytest
+dvc
 
 # project dependencies
+numpy
 pandas
+hydra
+hydra-core
+hydra_colorlog
+omegaconf
+
+#inference
+fastapi
+uvicorn

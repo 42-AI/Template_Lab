@@ -1,6 +1,36 @@
 Template_Lab
 ==============================
 
+# How to run as a module
+
+```sh
+python3.8 -m src --argument
+```
+
+# How to launch fast api
+
+```sh
+uvicorn app:app --host 0.0.0.0 --port 8000
+```
+
+Then visits: <http://localhost:8000/docs>
+
+# With the docker
+
+```sh
+docker build -t inference:latest .
+
+docker run -p 8000:8000 --name inference_container inference:latest
+```
+
+# With Docker Compose
+
+```
+docker-compose up
+```
+
+# Project architecture
+
 Template for all the future project of the Laboratory of 42-AI
 
 Project Organization
