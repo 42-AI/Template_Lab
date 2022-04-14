@@ -1,7 +1,6 @@
 name: 🤖 Developper 
-about: As a developper of this project you create an issue before coding 💻
-description: Issue for Agile methodology ⚛
-title: 'type: description'
+description: Issue for Agile methodology 💻
+title: 'type(scope): description' 
 labels: ["feature", "triage"]
 assignees:
   - # Update it
