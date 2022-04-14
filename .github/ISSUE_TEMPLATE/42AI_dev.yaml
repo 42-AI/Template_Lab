@@ -28,7 +28,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: Acceptance Criteria
+    id: Acceptance-Criteria
     attributes:
       label: Acceptance Criteria
       description: |
@@ -48,7 +48,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: Definition of Done
+    id: Definition-of-Done
     attributes:
       label: Definition of Done
       description: |
