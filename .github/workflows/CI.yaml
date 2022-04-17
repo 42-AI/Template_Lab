@@ -13,4 +13,6 @@ jobs:
       - name: Linting
         run: pre-commit run -a
       - name: unit-tests
-        run: python -m pytest -k "not slow"
+        run: |
+          export HYDRA_FULL_ERROR=1
+          python -m pytest

@@ -9,6 +9,7 @@ then
 fi
 
 # Testing
+export HYDRA_FULL_ERROR=1
 python -m pytest -k "not slow"
 if [ $? != 0 ]
 then
