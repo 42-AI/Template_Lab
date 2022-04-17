@@ -114,6 +114,8 @@ fi
 # CONDA Environment                                        #
 ############################################################
 
+echo -e $COLOR_YELLOW "INIT: " $COLOR_RESET "Testing your conda environment..."
+
 if [[ "$CI" ]]
 then
     echo -e $COLOR_PURPLE "Skipping test because we are in Github actions" $COLOR_RESET
