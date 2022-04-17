@@ -13,7 +13,20 @@
 
 ## Description
 
-What it does
+This is 42AI Lab Template.
+
+Created from [ashleve/lightning-hydra-template](https://github.com/ashleve/lightning-hydra-template)
+
+This template is Research Ready.
+It will allow for fast and high quality experiment, development, and results analysis.
+
+
+There is still some work to do such that we can make it production ready.
+
+For high quality inference these next steps seems wise:
+ - Adding ONNX support
+ - Docker compliant
+ - Fast API server
 
 ## How to run
 
@@ -21,18 +34,11 @@ Install dependencies
 
 ```bash
 # clone project
-git clone https://github.com/YourGithubName/your-repo-name
-cd your-repo-name
+git clone https://github.com/42-AI/Template_Lab
+cd Template_Lab
 
-# [OPTIONAL] create conda environment
-conda create -n myenv python=3.8
-conda activate myenv
-
-# install pytorch according to instructions
-# https://pytorch.org/get-started/
-
-# install requirements
-pip install -r requirements.txt
+# Setup the repository
+.42AI/init.sh
 ```
 
 Train model with default configuration
@@ -55,4 +61,9 @@ You can override any parameter from command line like this
 
 ```bash
 python train.py trainer.max_epochs=20 datamodule.batch_size=64
+```
+
+Multi run experiment
+```bash
+python train.py -m experiment=fashion_conv "++model.net.dropout=range(0,.5,.1)" "++model.lr=1e-2,1e-3"
 ```
