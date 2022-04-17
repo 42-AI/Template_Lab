@@ -11,14 +11,24 @@
 
 </div>
 
+- [42AI - Lab Template](#42ai---lab-template)
+	- [Description](#description)
+	- [How to run](#how-to-run)
+	- [Acknowledgements](#acknowledgements)
+
 ## Description
 
 This is 42AI Lab Template.
 
-Created from [ashleve/lightning-hydra-template](https://github.com/ashleve/lightning-hydra-template)
+
+
+<br/>
 
 This template is Research Ready.
+
 It will allow for fast and high quality experiment, development, and results analysis.
+
+<br/>
 
 
 There is still some work to do such that we can make it production ready.
@@ -41,7 +51,16 @@ cd Template_Lab
 .42AI/init.sh
 ```
 
+Train your model
+
+```bash
+python train.py
+```
+
+<details>
+  <summary>
 Train model with default configuration
+  </summary>
 
 ```bash
 # train on CPU
@@ -50,20 +69,44 @@ python train.py trainer.gpus=0
 # train on GPU
 python train.py trainer.gpus=1
 ```
+</details>
 
-Train model with chosen experiment configuration from [configs/experiment/](configs/experiment/)
+
+<details>
+  <summary>
+  Train model with chosen experiment configuration from [configs/experiment/](configs/experiment/)
+  </summary>
 
 ```bash
 python train.py experiment=experiment_name.yaml
 ```
+</details>
 
+
+<details>
+  <summary>
 You can override any parameter from command line like this
+  </summary>
 
 ```bash
 python train.py trainer.max_epochs=20 datamodule.batch_size=64
 ```
+</details>
 
+
+<details>
+  <summary>
 Multi run experiment
+  </summary>
+
 ```bash
 python train.py -m experiment=fashion_conv "++model.net.dropout=range(0,.5,.1)" "++model.lr=1e-2,1e-3"
 ```
+</details>
+
+## Acknowledgements
+
+
+Thanks [ashleve/lightning-hydra-template](https://github.com/ashleve/lightning-hydra-template) for your great template.
+
+There is more details on their Readme about this template usage
