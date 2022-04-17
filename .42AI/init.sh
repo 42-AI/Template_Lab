@@ -114,7 +114,10 @@ fi
 # CONDA Environment                                        #
 ############################################################
 
-if [ -z "$CONDA_DEFAULT_ENV" ]
+if [[ "$CI" ]]
+then
+    echo -e $COLOR_PURPLE "Skipping test because we are in Github actions" $COLOR_RESET
+elif [ -z "$CONDA_DEFAULT_ENV" ]
 then
     echo -e $COLOR_RED "No conda environment" $COLOR_RESET
 	echo "You can create one by executing the folowing command:"
