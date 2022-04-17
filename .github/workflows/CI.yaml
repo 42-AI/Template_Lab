@@ -6,14 +6,10 @@ jobs:
   hello-world:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello world
-        run: echo Hello World
       - name: checkout repo
         uses: actions/checkout@v2
-      - name: envrc
-        run: touch .envrc
       - name: Setup
-        run: sh .42AI/init.sh
+        run: .42AI/init.sh
       - name: Linting
         run: pre-commit run -a
       - name: unit-tests

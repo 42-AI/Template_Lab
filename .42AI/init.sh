@@ -83,8 +83,7 @@ echo -e "\t" $COLOR_BLUE "CI=" $COLOR_RESET  $CI
 ############################################################
 echo -e $COLOR_YELLOW "INIT:" $COLOR_RESET "Checking if .envrc exist"
 
-if [[ "$CI" ]]
-then
+if [[ "$CI" ]]; then
     echo -e $COLOR_PURPLE "Skipping test because we are in Github actions" $COLOR_RESET
 elif test -f "$PATH_ENVRC"; then
     echo -e $COLOR_GREEN "$PATH_ENVRC exists." $COLOR_RESET
