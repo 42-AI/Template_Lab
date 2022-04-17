@@ -76,6 +76,7 @@ echo -e "\t" $COLOR_BLUE "PATH_ENVRC=" $COLOR_RESET  $PATH_ENVRC
 echo -e "\t" $COLOR_BLUE "CONDA_ENV=" $COLOR_RESET  $CONDA_ENV
 echo -e "\t" $COLOR_BLUE "DVC_REMOTE=" $COLOR_RESET  $DVC_REMOTE
 echo -e "\t" $COLOR_BLUE "AWS_PROFILE=" $COLOR_RESET  $AWS_PROFILE
+echo -e "\t" $COLOR_BLUE "CI=" $COLOR_RESET  $CI
 
 ############################################################
 # .envrc                                                   #
