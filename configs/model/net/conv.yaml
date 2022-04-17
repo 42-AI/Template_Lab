@@ -1,0 +1,4 @@
+_target_: src.models.components.simple_conv_net.SimpleConvNet
+input_channel: 1
+dropout: 0.25
+n_classes: 10

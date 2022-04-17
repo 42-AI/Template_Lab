@@ -1,0 +1,37 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /datamodule: fashion_mnist.yaml
+  - override /model: mnist.yaml
+  - override /callbacks: default.yaml
+  - override /trainer: default.yaml
+  - override /model/net: conv.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+# name of the run determines folder name in logs
+name: "simple_conv_net"
+
+seed: 12345
+
+trainer:
+  min_epochs: 1
+  max_epochs: 2
+  gradient_clip_val: 0.5
+
+model:
+  lr: 0.002
+  net:
+    dropout: 0.1
+
+
+datamodule:
+  batch_size: 64
+
+logger:
+  wandb:
+    tags: ["fashion_mnist", "${name}"]

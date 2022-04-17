@@ -4,12 +4,11 @@
 - [Tools to Install](#tools-to-install)
 	- [Python](#python)
 	- [pip](#pip)
-	- [virtualenv](#virtualenv)
+	- [Miniconda](#miniconda)
 	- [direnv](#direnv)
 	- [AWS CLI](#aws-cli)
 - [Initialize your repository](#initialize-your-repository)
-	- [Create a virtualenv](#create-a-virtualenv)
-	- [Initialize direnv](#initialize-direnv)
+	- [Create a conda environment](#create-a-conda-environment)
 	- [Launch the script to initialize your project](#launch-the-script-to-initialize-your-project)
 	- [Verify you can launch the project](#verify-you-can-launch-the-project)
 
@@ -77,12 +76,15 @@ python3.8 get-pip.py
 
 If you want to learn more about pip, here is a great place: <https://realpython.com/what-is-pip/>
 
-## virtualenv
+## Miniconda
 
-Then install virtualenv using pip3
+Use miniconda for your python environments (it's usually unnecessary to install full anaconda environment, miniconda should be enough). It makes it easier to install some dependencies, like cudatoolkit for GPU support. It also allows you to acccess your environments globally.
 
-```
-python3.8 -m pip install --user virtualenv
+Example installation:
+
+```sh
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
 For more explanation on this tool you should read this page <https://virtualenv.pypa.io/en/latest/>
@@ -109,20 +111,14 @@ Now all these steps are specifics to this project, and this project only !
 
 You should first `git clone` this project, and then `cd` to it's top directory for running all the following commands.
 
-## Create a virtualenv
+## Create a conda environment
+
+Create new conda environment:
 
 ```sh
-python3.8 -m venv venv
+conda create -n myenv python=3.8
+conda activate myenv
 ```
-
-## Initialize direnv
-
-```sh
-echo "source venv/bin/activate" > .envrc
-direnv allow .
-```
-
-Now everytime you use `python` in this project it will call the binary in `venv/bin/python3.8`.
 
 ## Launch the script to initialize your project
 
@@ -143,11 +139,5 @@ Then you can run the script
 with this command
 
 ```sh
-python -m src
-```
-
-and this one:
-
-```sh
-uvicorn app:app --host 0.0.0.0 --port 8000
+python train.py logger=mlflow
 ```

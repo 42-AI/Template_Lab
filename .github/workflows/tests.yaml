@@ -14,7 +14,7 @@ jobs:
         run: touch .envrc
       - name: Setup
         run: sh .42AI/init.sh
-      - name: Linting
-        run: autopep8 -r --diff src
+      # - name: Linting
+      #   run: autopep8 -r --diff src
       - name: unit-tests
         run: pytest src

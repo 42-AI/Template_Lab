@@ -48,7 +48,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: Definition of Done
+    id: Definition-of-Done
     attributes:
       label: Definition of Done
       description: |
@@ -63,7 +63,7 @@ body:
 
         Defined by CICD:
         - Code reviewed
-        - pep8 compliant
+        - black compliant
         - Unit tests passed
         - Functional tests passed
         - Non-Functional requirements met

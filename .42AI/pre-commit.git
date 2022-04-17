@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 
-VIRTUALENV_PATH="./venv"
-. $VIRTUALENV_PATH/bin/activate
 
+exit 0
 # Linting
-if [[ $(autopep8 -r --diff src) ]]
-then
-    echo "Error in file linting, can't commit files" 1>&2
-	echo 'Please run `make format`'
-    exit 1
-fi
+# if [[ $(autopep8 -r --diff src) ]]
+# then
+#     echo "Error in file linting, can't commit files" 1>&2
+# 	echo 'Please run `make format`'
+#     exit 1
+# fi
 
 # Testing
 pytest src 1>/dev/null
