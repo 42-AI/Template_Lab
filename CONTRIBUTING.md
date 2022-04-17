@@ -97,14 +97,14 @@ When you create an issue, make sure it :
 - **feat**: Creation of a new feature
 - **fix**: Fix a bug
 - **perf**: Changes that only improve performance
-- **refactor**: A code change that do not add features or fix a bug 
+- **refactor**: A code change that do not add features or fix a bug
 - **style**: Changes that does not affect the code (white-space, formatting, etc...)
 - **test**: Creating a test
 
 ---
 ## COMMITS
 Your commit messages must follow [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/)
-with the same **`<type>`** than in the issues naming convention above 
+with the same **`<type>`** than in the issues naming convention above
 
 if your commit solves an issue, you have to reference it with #ISSUE_NB
 

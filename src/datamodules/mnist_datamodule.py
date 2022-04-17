@@ -10,8 +10,8 @@ from torchvision.transforms import transforms
 
 
 class MNISTDataModule(LightningDataModule):
-    """Example of LightningDataModule for MNIST dataset.
-    A DataModule implements 5 key methods:
+    """Example of LightningDataModule for MNIST dataset. A DataModule implements 5 key methods:
+
         - prepare_data (things to do on 1 GPU/TPU, not on every GPU/TPU in distributed mode)
         - setup (things to do on every accelerator in distributed mode)
         - train_dataloader (the training dataloader)
@@ -51,6 +51,7 @@ class MNISTDataModule(LightningDataModule):
 
     def prepare_data(self):
         """Download data if needed.
+
         This method is called only from a single GPU.
         Do not use it to assign state (self.x = y).
         """
@@ -58,18 +59,18 @@ class MNISTDataModule(LightningDataModule):
         MNIST(self.hparams.data_dir, train=False, download=True)
 
     def setup(self, stage: Optional[str] = None):
-        """Load data. Set variables: `self.data_train`, `self.data_val`, `self.data_test`.
-        This method is called by lightning when doing `trainer.fit()` and `trainer.test()`,
-        so be careful not to execute the random split twice! The `stage` can be used to
-        differentiate whether it's called before trainer.fit()` or `trainer.test()`.
+        """Load data.
+
+        Set variables: `self.data_train`, `self.data_val`, `self.data_test`. This method is
+        called by lightning when doing `trainer.fit()` and `trainer.test()`, so be careful
+        not to execute the random split twice! The `stage` can be used to differentiate
+        whether it's called before trainer.fit()` or `trainer.test()`.
         """
 
         # load datasets only if they're not loaded already
         if not self.data_train and not self.data_val and not self.data_test:
-            trainset = MNIST(self.hparams.data_dir, train=True,
-                             transform=self.transforms)
-            testset = MNIST(self.hparams.data_dir, train=False,
-                            transform=self.transforms)
+            trainset = MNIST(self.hparams.data_dir, train=True, transform=self.transforms)
+            testset = MNIST(self.hparams.data_dir, train=False, transform=self.transforms)
             dataset = ConcatDataset(datasets=[trainset, testset])
             self.data_train, self.data_val, self.data_test = random_split(
                 dataset=dataset,

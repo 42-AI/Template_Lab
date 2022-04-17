@@ -8,8 +8,8 @@ RUN apt-get update \
 COPY requirements.txt $HOME/42AI/
 
 # Here we get all python packages.
-# Pip leaves the install caches populated which uses a significant amount of 
-# space. These optimizations save a fair amount of space in the image, which 
+# Pip leaves the install caches populated which uses a significant amount of
+# space. These optimizations save a fair amount of space in the image, which
 # reduces start up time.
 RUN pip3 install --upgrade pip
 RUN pip3 install --no-cache-dir -r \

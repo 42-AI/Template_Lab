@@ -1,5 +1,5 @@
 # From this repository:
-#	https://github.com/ashleve/lightning-hydra-template
+# https://github.com/ashleve/lightning-hydra-template
 
 import logging
 import warnings
@@ -67,6 +67,7 @@ def print_config(
     resolve: bool = True,
 ) -> None:
     """Prints content of DictConfig using Rich library and its tree structure.
+
     Args:
         config (DictConfig): Configuration composed by Hydra.
         print_order (Sequence[str], optional): Determines in what order config components are printed.
@@ -79,8 +80,7 @@ def print_config(
     quee = []
 
     for field in print_order:
-        quee.append(field) if field in config else log.info(
-            f"Field '{field}' not found in config")
+        quee.append(field) if field in config else log.info(f"Field '{field}' not found in config")
 
     for field in config:
         if field not in quee:
@@ -112,8 +112,8 @@ def log_hyperparameters(
     callbacks: List[pl.Callback],
     logger: List[pl.loggers.LightningLoggerBase],
 ) -> None:
-    """Controls which config parts are saved by Lightning loggers.
-    Additionaly saves:
+    """Controls which config parts are saved by Lightning loggers. Additionaly saves:
+
     - number of model parameters
     """
 

@@ -1,9 +1,9 @@
-name: 🤖 Developper 
+name: 🤖 Developper
 description: Issue for Agile methodology 💻
-title: 'type(scope): description' 
+title: "type(scope): description"
 labels: ["feature", "triage"]
 assignees:
-  - # Update it
+  -  # Update it
 body:
   - type: markdown
     attributes:
@@ -42,9 +42,9 @@ body:
           - to help verify the story via automated tests
       placeholder: Acceptance Criteria
       value: |
-         - [ ] Condition one
-         - [ ] Condition two
-         - [ ] Condition three
+        - [ ] Condition one
+        - [ ] Condition two
+        - [ ] Condition three
     validations:
       required: true
   - type: textarea

@@ -31,7 +31,7 @@ If it's not follow these instructions:
 
 <details>
   <summary>Click to expand!</summary>
-  
+
  1. Run the following commands as root or user with sudo access to update the packages list and install the prerequisites:
  ```sh
  sudo apt update

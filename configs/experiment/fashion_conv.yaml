@@ -28,7 +28,6 @@ model:
   net:
     dropout: 0.1
 
-
 datamodule:
   batch_size: 64
 

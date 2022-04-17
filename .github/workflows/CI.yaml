@@ -1,4 +1,4 @@
-name: Tests
+name: Continuous Integration
 
 on: [push]
 
@@ -14,7 +14,7 @@ jobs:
         run: touch .envrc
       - name: Setup
         run: sh .42AI/init.sh
-      # - name: Linting
-      #   run: autopep8 -r --diff src
+      - name: Linting
+        run: pre-commit run -a
       - name: unit-tests
-        run: pytest src
+        run: python -m pytest -k "not slow"

@@ -18,7 +18,6 @@ CONDA_ENV=${PWD##*/}
 RAW_BUCKET_NAME=`echo "$CONDA_ENV" | tr -cd '[:alnum:].-' | tr '[:upper:]' '[:lower:]'`
 BUCKET_NAME="42ai-$RAW_BUCKET_NAME"
 DVC_REMOTE="s3://$BUCKET_NAME/storage"
-
 AWS_PROFILE=$BUCKET_NAME
 
 ############################################################
@@ -30,7 +29,7 @@ Help()
    echo "Script to execute after the git clone of the project"
    echo "IT MUST BE LAUNCHED FROM THE PROJECT TOP DIRECTORY"
    echo
-   echo "usage: bash .42AI/init.sh [--help] [python_path]" 
+   echo "usage: bash .42AI/init.sh [--help] [python_path]"
    echo "options:"
    echo "	--help          Print this Help."
    echo "   python_path     Optional path to python interpreter."
@@ -82,7 +81,11 @@ echo -e "\t" $COLOR_BLUE "AWS_PROFILE=" $COLOR_RESET  $AWS_PROFILE
 # .envrc                                                   #
 ############################################################
 echo -e $COLOR_YELLOW "INIT:" $COLOR_RESET "Checking if .envrc exist"
-if test -f "$PATH_ENVRC"; then
+
+if [[ "$CI" ]]
+then
+    echo -e $COLOR_PURPLE "Skipping test because we are in Github actions" $COLOR_RESET
+elif test -f "$PATH_ENVRC"; then
     echo -e $COLOR_GREEN "$PATH_ENVRC exists." $COLOR_RESET
 else
     echo -e $COLOR_RED ".envrc do not exist at location $PATH_ENVRC" $COLOR_RESET
@@ -139,6 +142,7 @@ fi
 # git hook                                                 #
 ############################################################
 echo -e $COLOR_YELLOW "INIT: " $COLOR_RESET "Creating hook commit..."
+
 mkdir -p .git/hooks/
 cp .42AI/pre-commit.git .git/hooks/pre-commit
 
@@ -147,6 +151,7 @@ cp .42AI/pre-commit.git .git/hooks/pre-commit
 # Creating directories                                     #
 ############################################################
 echo -e $COLOR_YELLOW "INIT: " $COLOR_RESET "Creating data directories..."
+
 mkdir -p data/raw
 mkdir -p data/processed
 mkdir -p data/results
@@ -175,7 +180,11 @@ python -m pip install -r requirements.txt
 ############################################################
 
 echo -e $COLOR_YELLOW "INIT: " $COLOR_RESET "Verifying if aws cli is installed"
-if aws --version;
+
+if [[ "$CI" ]]
+then
+    echo -e $COLOR_PURPLE "Skipping test because we are in Github actions" $COLOR_RESET
+elif aws --version;
 then
     echo -e $COLOR_GREEN "aws is installed !" $COLOR_RESET
 else
@@ -185,7 +194,10 @@ fi
 
 
 echo -e $COLOR_YELLOW "INIT: " $COLOR_RESET "Verifying that aws cli is configured"
-if [[ $(aws configure get aws_access_key_id) ]]; then
+if [[ "$CI" ]]
+then
+    echo -e $COLOR_PURPLE "Skipping test because we are in Github actions" $COLOR_RESET
+elif [[ $(aws configure get aws_access_key_id) ]]; then
     echo -e $COLOR_GREEN "aws is configured !" $COLOR_RESET
 elif [[ $(aws configure get aws_access_key_id --profile $AWS_PROFILE) ]]; then
     echo -e $COLOR_GREEN "aws is configured !" $COLOR_RESET
@@ -204,20 +216,24 @@ fi
 ############################################################
 
 echo -e $COLOR_YELLOW "INIT: " $COLOR_RESET "Verifying that DVC remote is setup"
-if [[ $(dvc remote list | grep s3-remote) ]]; then
+
+if [[ "$CI" ]]
+then
+    echo -e $COLOR_PURPLE "Skipping test because we are in Github actions" $COLOR_RESET
+elif [[ $(dvc remote list | grep s3-remote) ]]; then
     echo -e $COLOR_GREEN "DVC remote is already setup!" $COLOR_RESET
 else
 	echo -e $COLOR_RED "ERROR: " $COLOR_RESET "DVC remote is not yet setup"
 
 	echo "Add dvc remote with:"
-	echo -e $COLOR_YELLOW "dvc remote add -f s3-remote $DVC_REMOTE" $COLOR_RESET 
+	echo -e $COLOR_YELLOW "dvc remote add -f s3-remote $DVC_REMOTE" $COLOR_RESET
 	exit 1
 fi
 
 
 echo -e $COLOR_YELLOW "INIT: " $COLOR_RESET "Pulling DVC data !"
 echo "Please synchronize your data with:"
-echo -e $COLOR_YELLOW "dvc pull -r s3-remote" $COLOR_RESET 
+echo -e $COLOR_YELLOW "dvc pull -r s3-remote" $COLOR_RESET
 
 
 echo -e $COLOR_GREEN "PROJECT IS FULLY INITIALIZED <3" $COLOR_RESET

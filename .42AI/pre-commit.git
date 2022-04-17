@@ -1,17 +1,15 @@
-#!/usr/bin/env bash
+#! /bin/bash -
 
-
-exit 0
-# Linting
-# if [[ $(autopep8 -r --diff src) ]]
-# then
-#     echo "Error in file linting, can't commit files" 1>&2
-# 	echo 'Please run `make format`'
-#     exit 1
-# fi
+#Linting
+pre-commit run -a
+if [ $? != 0 ]
+then
+    echo "Error in file linting, can't commit files" 1>&2
+    exit 1
+fi
 
 # Testing
-pytest src 1>/dev/null
+python -m pytest -k "not slow"
 if [ $? != 0 ]
 then
     echo "Error in unit testing, can't commit files" 1>&2
