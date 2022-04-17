@@ -1,6 +1,6 @@
-name: Feature Request
-description: File a feature request
-title: 'type: description'
+name: 🤖 Developper 
+description: Issue for Agile methodology 💻
+title: 'type(scope): description' 
 labels: ["feature", "triage"]
 assignees:
   - # Update it
@@ -28,7 +28,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: Acceptance Criteria
+    id: Acceptance-Criteria
     attributes:
       label: Acceptance Criteria
       description: |
