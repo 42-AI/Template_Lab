@@ -24,7 +24,7 @@ body:
       value: |
         As a [persona],
         I want to [functionality],
-        so that [value]. (persona focused)
+        so that [value (persona focused)].
     validations:
       required: true
   - type: textarea
@@ -32,15 +32,15 @@ body:
     attributes:
       label: Acceptance Criteria
       description: |
-        Acceptance Criteria or ‘conditions of satisfaction’, provide a detailed scope of a user’s requirements.
+        Acceptance Criteria (AC) provide a detailed scope of a user’s requirements.
         They help the team to understand the value of the story and set expectations as to when a team should consider something done.
 
-        Acceptance Criteria Goals
+        AC Goals
           - to clarify what the team should build before they start work
           - to ensure everyone has a common understanding of the problem/need of the customer
           - to help team members know when the story is complete
           - to help verify the story via automated tests
-      placeholder: Tell us what you want to happen!
+      placeholder: Acceptance Criteria
       value: |
          - [ ] Condition one
          - [ ] Condition two
@@ -57,9 +57,15 @@ body:
         The difference between DoD and Acceptance Criteria is that the DoD is common for all the User Stories, where as the Acceptance Criteria is specific to a user story
       placeholder: Definition of Done
       value: |
-        - [ ] pep8 compliant
-        - [ ] all unit test are passed
-        - [ ] data has been dvc pushed
-        - [ ] code has been reviewed
+        - [ ] Product Owner accepts the User Story
+        - [ ] Acceptance criteria met
+        - [ ] New data has been `dvc push`
+
+        Defined by CICD:
+        - Code reviewed
+        - pep8 compliant
+        - Unit tests passed
+        - Functional tests passed
+        - Non-Functional requirements met
     validations:
       required: true
