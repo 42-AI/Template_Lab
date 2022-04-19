@@ -90,25 +90,11 @@ elif test -f "$PATH_ENVRC"; then
 else
     echo -e $COLOR_RED ".envrc do not exist at location $PATH_ENVRC" $COLOR_RESET
 	echo "It can be created this way:"
-	echo "$> cp .env.examplew .env"
+	echo "$> cp .env.example .env"
 	exit 1
 fi
 
 
-############################################################
-# python version                                           #
-############################################################
-echo -e $COLOR_YELLOW "INIT: " $COLOR_RESET "Testing your python version..."
-
-$PATH_PYTHON "./.42AI/test_environment.py"
-
-if [ $? == 0 ]
-then
-    echo -e $COLOR_GREEN "Good python version" $COLOR_RESET
-else
-    echo -e $COLOR_RED "Bad python version" $COLOR_RESET
-	exit 1
-fi
 
 ############################################################
 # CONDA Environment                                        #
@@ -142,6 +128,20 @@ else
 	exit 1
 fi
 
+############################################################
+# python version                                           #
+############################################################
+echo -e $COLOR_YELLOW "INIT: " $COLOR_RESET "Testing your python version..."
+
+$PATH_PYTHON "./.42AI/test_environment.py"
+
+if [ $? == 0 ]
+then
+    echo -e $COLOR_GREEN "Good python version" $COLOR_RESET
+else
+    echo -e $COLOR_RED "Bad python version" $COLOR_RESET
+	exit 1
+fi
 
 ############################################################
 # git hook                                                 #
