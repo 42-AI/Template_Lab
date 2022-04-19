@@ -160,7 +160,7 @@ configs/local/default.yaml
 
 # Projects
 outputs
-models
+/models
 
 # data
 /data/processed
